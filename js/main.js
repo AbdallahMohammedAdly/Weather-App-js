@@ -1,4 +1,4 @@
-let keyApi = "367ffd4724734ba38df103928232004" ;
+let keyApi = "8dbd269a009c40668a2131050241808" ;
 let token ="pk.8cc0f931d56091006b8e780ca0af3da9";
 let result ,     city,      myReq ,     myRes ,     x ,     y,     res ,     html ="",     api;
 let element = document.querySelector('.data')
@@ -13,7 +13,7 @@ getCoordinates()
 // displayData()
 function myCity(){
     getCoordinates()
-     api = `http://api.weatherapi.com/v1/forecast.json?key=${keyApi}&q=${city||currentCity||"cairo"}&days=7` ;
+     api = `http://api.weatherapi.com/v1/forecast.json?key=${keyApi}&q=${city||currentCity||"cairo"}&days=7&aqi=yes&alerts=yes` ;
 
 (async function(){
 res = await fetch(api);
