@@ -1,0 +1,43 @@
+#home{
+    background-image: url(../images/wallpaperflare.com_wallpaper\(21\).jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:center;
+}
+input{
+    width: 100%;
+    margin-top: .5rem;
+    padding: .25rem .5rem ;
+}
+input:hover{
+    border-color: unset !important;
+    box-shadow:unset !important;
+}
+.nav-item a{
+    border:2px solid transparent ;
+    margin-right: 1rem ;
+    transition: all .5s;
+}
+.nav-item:hover a{
+    border: 2px solid red;
+    border-radius: 20px;
+}
+.myLink:hover a{
+    color:#0dcaf0;
+}
+.myLink a{
+    color:#0dcaf0cc;
+}
+.contact{
+    position: relative;
+}
+.contact::after{
+    content: "";
+    width: 50%;
+    background-color: #0dcaf0cc;
+    position: absolute;
+    height: 2px;
+    top: 100%;
+    left: 0;
+
+}

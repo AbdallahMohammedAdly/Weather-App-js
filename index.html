@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>weather</title>
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body onload="myCity()">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-5">
+    <div class="container px-5">
+
+      <div class="logo d-flex ps-5">
+        <a class="navbar-brand" href="#">
+          <i class="bi bi-clouds" style="font-size: 4rem; color: cornflowerblue;"></i>
+        </a>
+        <a class="navbar-brand py-4" href="#">
+          <h4>weather</h4>
+          <h6 class="text-secondary">tagline goes here</h6>
+        </a>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item px-3">
+            <a class="nav-link active" aria-current="page" href="#home">Home</a>
+          </li>
+          <li class="nav-item px-3">
+            <a class="nav-link" href="#home" onclick="getData()">Sport</a>
+          </li>
+          <li class="nav-item px-3">
+            <a class="nav-link" href="#home" onclick="myCity()">weather</a>
+          </li>
+  
+          
+          <li class="nav-item px-3">
+            <a class="nav-link" href="#Contact">contact</a>
+          </li>
+
+
+      </div>
+    </div>
+  </nav>
+
+
+  <section id="home" class="p-5">
+    <div class="container p-5">
+      <div class="row bg-dark rounded-5 p-2 ">
+        <div class="col bg-dark rounded-5">
+          <input type="text" class="border-0 bg-transparent text-light" onkeyup="search(this.value)"
+            placeholder="Find your location...">
+        </div>
+        <div class="col-1 bg-primary rounded-5 p-2 text-center">
+          <button type="" class=" bg-transparent rounded-5 border-0 text-light">Search</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="container vh-100">
+      <div class="row data g-3 news p-5">
+    </div>
+    </div>
+   
+    
+  </section>
+
+  <footer class="bg-dark">  
+    <div class="container p-5">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="text-info">
+            <h3 class="contact mb-3 p-3">message :</h3>
+            <textarea name="message" id="message" cols="10" rows="5" placeholder="msg" class="form-control mt-4 p-4">here...</textarea>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="Contact" id="Contact"> <h4 class="text-info py-3 contact">Contact me</h4> 
+           <ul class="list-unstyled ">
+            <li class="m-3 myLink">
+              <a class="text-decoration-none" href="https://www.facebook.com/abdallah.eladly.98"><i class="fa fa-brands fa-facebook fa-2x mx-2"></i>www.facebook.com/abdallah.eladly.98</a>
+            </li>
+            <li class="m-3 myLink">
+              <a class="text-decoration-none" href="https://www.linkedin.com/in/abdallah-mohammed-adly-radwan-a8a0a820b/"><i class="fa fa-brands fa-linkedin fa-2x mx-2"></i>www.linkedin.com/in/abdallah-mohammed-adly-radwan</a>
+            </li>
+            <li class="m-3 myLink">
+              <a class="text-decoration-none" href="https://github.com/AbdallahMohammedAdly"><i class="fa fa-brands fa-github fa-2x mx-2"> </i>github.com/AbdallahMohammedAdly</a>
+            </li>
+            <li class="m-3 myLink">
+              <a class="text-decoration-none" href="https://www.facebook.com"><i class="fa fa-brands fa-facebook fa-2x mx-2 "></i>www.facebook.com</a>
+            </li>
+           </ul>
+         S
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
+
+  <script src="js/all.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
