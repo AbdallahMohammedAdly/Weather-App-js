@@ -1,4 +1,4 @@
-let keyApi = "8dbd269a009c40668a2131050241808" ;
+let keyApi = "d4618852d5164f24a4d132955253007" ;
 let token ="pk.8cc0f931d56091006b8e780ca0af3da9";
 let result ,     city,      myReq ,     myRes ,     x ,     y,     res ,     html ="",     api;
 let element = document.querySelector('.data')
@@ -60,10 +60,10 @@ element.innerHTML = html ;
 }
 
 async function getData(){
-     myReq = await fetch(`http://api.weatherapi.com/v1/Sport.json?key=${keyApi}&q=lond`)
+     myReq = await fetch(`http://api.weatherapi.com/v1/sports.json?key=${keyApi}&q=London`)
      myRes = await myReq.json()
     console.log(myRes);
-    // displayData(myRes)
+     displayData(myRes)
 }
 
 
@@ -93,7 +93,7 @@ let api = `http://api.weatherapi.com/v1/forecast.json?key=${keyApi}&q=${city||cu
 (async function(){
 res =await fetch(api);
 result = await res.json();
-
+console.log(result);
 for(let i = 0; i < result.forecast.forecastday.length;i++){
    
      
@@ -101,7 +101,7 @@ html = `<div class="container rounded-2 text-white">
 <div class="row">
   <div class="col-md-4 rounded-3 opacity-75">
     <div class="card p-3 h-100">
-      <div class="head mb-3 d-flex justify-content-between"><h5>${Day[day.getDay()]}</h5><h5>${day.getDate() + month[day.getMonth()]}</h5></div>
+      <div class="head mb-3 d-flex justify-content-between"><h5>${Day[day.getDay()]}</h5><h5>${day.getDate() + month[day.getMonth()]} ${ result.forecast.forecastday[i].date}</h5></div>
       <div class="body"><h5 class='my-2'>${result.location.name}</h5>
       <div class="d-flex m-3"><h3 class='my-2 d-inline-block'>${result.current.temp_c}℃</h3><img class="h-100" src="https:${result.current.condition.icon}"></div><h5 class='mb-5' >${result.current.condition.text}</h5></div>
       <div class="foot d-flex justify-content-evenly"><h5><i class="fa-solid fa-umbrella"></i>${result.current.gust_kph}</h5><h5><i class="fa-solid fa-wind"></i>${result.current.humidity}</h5><h5><i class="fa-regular fa-compass"></i>${result.current.wind_dir}</h5></div>
@@ -110,7 +110,7 @@ html = `<div class="container rounded-2 text-white">
   </div>
   <div class="col-md-4 rounded-3 opacity-75">
     <div class="card p-3 text-center h-100">
-      <div class="head mb-3"><h5>${Day[day.getDay()+1]}</h5></div>
+      <div class="head mb-3"><h5>${Day[day.getDay()+1]} ${ result.forecast.forecastday[1].date }</h5></div>
       <div class="body">
       <div class="d-flex justify-content-center"><h3 class='my-2'>${result.forecast.forecastday[i].day.maxtemp_c}℃</h3>
       <img class="h-100" src="https:${result.forecast.forecastday[i].day.condition.icon}"></div><h5>${result.forecast.forecastday[i].day.mintemp_c}℃</h5><h5 class="mt-5">${result.forecast.forecastday[i].day.condition.text}</h5></div>
@@ -121,7 +121,7 @@ html = `<div class="container rounded-2 text-white">
   <div class="col-md-4 rounded-3 opacity-75">
     <div class="card p-3 text-center h-100">
     <div class="head mb-3"><h5>${Day[day.getDay()+2]}</h5></div>
-    <div class="body"><div class="d-flex justify-content-center"><h3 class='my-2'>${result.forecast.forecastday[i+1].day.maxtemp_c}℃</h3>
+    <div class="body"><div class="d-flex justify-content-center"><h3 class='my-2'>${result.forecast.forecastday[i].day.maxtemp_c}℃</h3>
     <img class="h-100" src="https:${result.forecast.forecastday[i+1].day.condition.icon}"></div><h5>${result.forecast.forecastday[i].day.mintemp_c}℃</h5><h5 class="mt-5">${result.forecast.forecastday[i].day.condition.text}</h5></div>
       
     
